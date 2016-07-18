@@ -8,4 +8,5 @@ public class Constant {
     public static final String LOGIN_USERNAME_CACHE="login_username";
     public static final String LOGIN_PAWSSWORD_CACHE="login_pawssord";
     public static final String FIRST_LAUNCH="first_launch";
+
 }
