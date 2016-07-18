@@ -22,7 +22,6 @@ public abstract class BasePresenter<T extends IBaseView>  {
 
     private void init(){
         iView.initView();
-        iView.initData();
     }
 
     public abstract void release();

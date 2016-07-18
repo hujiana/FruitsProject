@@ -84,7 +84,7 @@ public class JActivityManager {
         }
     }
 
-    public void closeAllActivity() {
+    public static void closeAllActivity() {
         while (true) {
             Activity activity = currentActivity();
             if (null == activity) {

@@ -35,5 +35,7 @@
     <color name="lite_blue">#ff359ff2</color>
     <color name="window_background">#00000000</color>
     <color name="black_de">#DE000000</color>
+    <!--navigation-->
+    <color name="check_nav_text_color">#9CD52A</color>
 
 </resources>

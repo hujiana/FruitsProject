@@ -1,8 +1,10 @@
 package com.fruits.pro.base;
 
 import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -16,6 +18,7 @@ import butterknife.ButterKnife;
 public  abstract  class BaseFragment<T extends BasePresenter> extends Fragment implements OnClickListener{
     public BaseActivity mActivity;
     public LayoutInflater mInflater;
+    public Context mContext;
     protected T presenter;
 
     /**
@@ -24,6 +27,20 @@ public  abstract  class BaseFragment<T extends BasePresenter> extends Fragment i
      */
     public BaseFragment() {
         super();
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        mContext =context;
+    }
+    protected void initToolBarTitle(CharSequence title){
+        ToolBarActivity toolBarActivity=(ToolBarActivity)getActivity();
+        toolBarActivity.initTitle(title);
+    }
+    protected void initToolBarTitle(int resId){
+        ToolBarActivity toolBarActivity=(ToolBarActivity)getActivity();
+        toolBarActivity.initTitle(resId);
     }
     @Override
     public void onAttach(Activity activity) {
@@ -51,6 +68,8 @@ public  abstract  class BaseFragment<T extends BasePresenter> extends Fragment i
         }
         ButterKnife.bind(this, view);
         initPresenter();
+        //想让Fragment中的onCreateOptionsMenu生效必须先调用setHasOptionsMenu方法，否则Toolbar没有菜单
+        setHasOptionsMenu(true);
         return view;
     }
     /**
@@ -81,4 +100,19 @@ public  abstract  class BaseFragment<T extends BasePresenter> extends Fragment i
         ButterKnife.unbind(this);
     }
 
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        if(presenter!=null){
+            presenter.release();
+        }
+    }
+
+    @Override
+    public void onClick(View v) {
+
+    }
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        return false;
+    }
 }

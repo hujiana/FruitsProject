@@ -6,11 +6,10 @@ import com.fruits.pro.base.BasePresenter;
 import com.fruits.pro.base.IBaseView;
 
 /**
- * Created by cwj on 16/7/17.
+ * Created by cwj on 16/7/18.
  */
-public class MainPresenter extends BasePresenter<MainPresenter.IMainView>{
-
-    public MainPresenter(Context context, IMainView iView) {
+public class HomePresenter extends BasePresenter<HomePresenter.IHomeView> {
+    public HomePresenter(Context context, IHomeView iView) {
         super(context, iView);
     }
 
@@ -19,7 +18,7 @@ public class MainPresenter extends BasePresenter<MainPresenter.IMainView>{
 
     }
 
-    public interface IMainView extends IBaseView{
+    public interface IHomeView extends IBaseView{
 
     }
 }

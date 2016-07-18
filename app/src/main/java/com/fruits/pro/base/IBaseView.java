@@ -6,11 +6,8 @@ package com.fruits.pro.base;
  */
 public interface IBaseView {
     /**
-     * 初始化view
+     * 初始化
      */
     void initView();
-    /**
-     * 初始化数据
-     */
-    void initData();
+
 }

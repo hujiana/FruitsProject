@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+   >
+
+    <include layout="@layout/view_toolbar"></include>
+
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/rg_navigation"
+        android:layout_below="@+id/app_bar"></FrameLayout>
+
+    <com.fruits.pro.widget.MyRadioGroup
+        android:id="@+id/rg_navigation"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        android:gravity="top"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/padding_5dp"
+        android:paddingTop="@dimen/padding_5dp">
+
+        <RadioButton
+            android:id="@+id/rb_tab_1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawablePadding="@dimen/padding_3dp"
+            android:drawableTop="@drawable/selector_navigation_01"
+            android:gravity="center"
+            android:background="@color/transparent"
+            android:text="首页"
+            android:textColor="@drawable/selector_navigation_text"
+            android:textSize="@dimen/text_size_13sp" />
+
+        <RadioButton
+            android:id="@+id/rb_tab_2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawablePadding="@dimen/padding_3dp"
+            android:drawableTop="@drawable/selector_navigation_02"
+            android:gravity="center"
+            android:background="@color/transparent"
+
+            android:text="分类"
+            android:textColor="@drawable/selector_navigation_text"
+            android:textSize="@dimen/text_size_13sp" />
+
+        <RadioButton
+            android:id="@+id/rb_tab_3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawablePadding="@dimen/padding_3dp"
+            android:drawableTop="@drawable/selector_navigation_03"
+            android:gravity="center"
+            android:background="@color/transparent"
+
+            android:text="个人中心"
+            android:textColor="@drawable/selector_navigation_text"
+            android:textSize="@dimen/text_size_13sp" />
+
+
+        <RadioButton
+            android:id="@+id/rb_tab_4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawablePadding="@dimen/padding_3dp"
+            android:drawableTop="@drawable/selector_navigation_04"
+            android:gravity="center"
+            android:background="@color/transparent"
+
+            android:text="社区"
+            android:textColor="@drawable/selector_navigation_text"
+            android:textSize="@dimen/text_size_13sp" />
+
+    </com.fruits.pro.widget.MyRadioGroup>
+</RelativeLayout>

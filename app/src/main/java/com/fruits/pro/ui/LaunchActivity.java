@@ -11,7 +11,6 @@ import android.widget.TextView;
 import com.fruits.pro.Constant;
 import com.fruits.pro.R;
 import com.fruits.pro.base.BaseActivity;
-import com.fruits.pro.utils.jutils.JUtils;
 
 import net.grandcentrix.tray.AppPreferences;
 
@@ -49,7 +48,7 @@ public class LaunchActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         StatusBarCompat.translucentStatusBar(this);
-        sharedPreference= JUtils.getSharedPreference();
+        sharedPreference= new AppPreferences(this);
         boolean isFirst = sharedPreference.getBoolean(Constant.FIRST_LAUNCH,true);
         if(isFirst){
             processLogic();

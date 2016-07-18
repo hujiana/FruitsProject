@@ -7,15 +7,12 @@ import com.fruits.pro.utils.jutils.JActivityManager;
 import com.fruits.pro.utils.jutils.JFileManager;
 import com.fruits.pro.utils.jutils.JUtils;
 
-import net.grandcentrix.tray.AppPreferences;
-
 import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
 
 /**
  * Created by cwj on 16/7/16.
  */
 public class BaseApplication extends Application {
-    private AppPreferences preferences;
     @Override
     public void onCreate() {
         super.onCreate();

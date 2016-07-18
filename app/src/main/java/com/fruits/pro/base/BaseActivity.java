@@ -16,7 +16,6 @@ import com.fruits.pro.R;
 import com.fruits.pro.utils.jutils.JActivityManager;
 
 import butterknife.ButterKnife;
-import qiu.niorgai.StatusBarCompat;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 /**
@@ -30,13 +29,12 @@ public abstract class BaseActivity<T extends BasePresenter> extends AppCompatAct
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(getLayoutResId());
+        ButterKnife.bind(this);
         //debug模式下 启用严格模式
         if (BuildConfig.DEBUG&& Build.VERSION.SDK_INT >=Build.VERSION_CODES.GINGERBREAD) {
             StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder().detectAll().penaltyLog().build());
             StrictMode.setVmPolicy(new StrictMode.VmPolicy.Builder().detectAll().penaltyLog().build());
         }
-        ButterKnife.bind(this);
-        StatusBarCompat.setStatusBarColor(this,R.color.transparent);
         this.initPresenter();
     }
     protected abstract int getLayoutResId();
