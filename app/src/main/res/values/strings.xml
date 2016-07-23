@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">FruitsProject</string>
+    <string name="app_name">果汇</string>
     <string name="qv_add">+</string>
     <string name="qv_remove">-</string>
     <string name="action_copy_url">复制地址</string>
